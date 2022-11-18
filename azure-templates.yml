@@ -31,3 +31,5 @@ stages:
       inputs:
         scriptPath:
           echo 'Hello World'
+          ls -l
+          pwd

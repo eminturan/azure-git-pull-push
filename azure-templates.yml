@@ -27,6 +27,7 @@ stages:
   - job: DenemeJob
     displayName: DenemeJob
     steps:
+    - checkout: main
     - checkout: helm
     - task: CmdLine@2
       displayName: denemetask

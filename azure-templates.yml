@@ -27,9 +27,8 @@ stages:
   - job: DenemeJob
     displayName: DenemeJob
     steps:
-    - task: ShellScript@2
-      inputs:
-        scriptPath:
-          echo 'Hello World'
-          ls -l
-          pwd
+    - script: |
+      pwd
+      ls -l
+    workingDirectory: '$(Build.Repository.LocalPath)'
+    displayName: 'list'

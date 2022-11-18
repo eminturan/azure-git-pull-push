@@ -37,8 +37,14 @@ stages:
           pwd
 
           echo 'Change Value'
+          echo '------------'
           cd azure-helm-repo/deneme-chart/
           sed 's/^\(  tag: \).*$/\11.2.2/' values.yaml > temp.yaml
           mv temp.yaml values.yaml
 
           cat values.yaml
+
+
+          echo 'Git Push'
+          echo '------------'
+          git branch

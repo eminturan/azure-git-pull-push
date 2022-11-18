@@ -29,7 +29,7 @@ stages:
     steps:
     - checkout: main
     - checkout: helm
-      #persistCredentials: true
+      persistCredentials: true
     - task: CmdLine@2
       displayName: denemetask
       inputs:

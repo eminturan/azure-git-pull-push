@@ -1,0 +1,33 @@
+pool:
+  name: LocalPoolEmin
+
+resources:
+  repositories:
+  - repository: main
+    type: github
+    name: eminturan/azure-git-pull-push
+    trigger:
+      branches:
+        include:
+        - main
+    endpoint: eminturan
+
+
+  - repository: helm
+    type: github
+    name: eminturan/azure-helm-repo
+    ref: refs/heads/main
+    endpoint: eminturan
+
+
+stages:
+- stage: Deneme
+  displayName: Deneme
+  jobs:
+  - job: DenemeJob
+    displayName: DenemeJob
+    steps:
+    - task: ShellScript@2
+      inputs:
+        scriptPath:
+          echo 'Hello World'

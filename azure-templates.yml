@@ -27,8 +27,9 @@ stages:
   - job: DenemeJob
     displayName: DenemeJob
     steps:
-    - script: |
-      pwd
-      ls -l
-    workingDirectory: '$(Build.Repository.LocalPath)'
-    displayName: 'list'
+    - task: CmdLine@2
+      displayName: denemetask
+      inputs:
+        script: |
+          ls -l
+          pwd

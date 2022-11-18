@@ -35,3 +35,8 @@ stages:
         script: |
           ls -l
           pwd
+
+          echo 'Change Value'
+          sed 's/^\(tag: \).*$/\15.6.7/' values.yaml
+
+          cat azure-helm-repo/deneme-chart/values.yaml

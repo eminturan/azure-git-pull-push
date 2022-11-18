@@ -29,6 +29,7 @@ stages:
     steps:
     - checkout: main
     - checkout: helm
+      persistCredentials: true
     - task: CmdLine@2
       displayName: denemetask
       inputs:
@@ -48,3 +49,6 @@ stages:
           echo 'Git Push'
           echo '------------'
           git branch
+          git add .
+          git commit -am "values.yaml updated"
+          git push origin HEAD:main

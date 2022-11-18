@@ -37,6 +37,7 @@ stages:
           pwd
 
           echo 'Change Value'
-          sed 's/^\(  tag: \).*$/\15.6.7/' azure-helm-repo/deneme-chart/values.yaml
+          sed 's/^\(  tag: \).*$/\11.2.2/' azure-helm-repo/deneme-chart/values.yaml > temp.yaml
+          mv temp.yaml values.yaml
 
           cat azure-helm-repo/deneme-chart/values.yaml
